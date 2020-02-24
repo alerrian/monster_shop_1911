@@ -24,7 +24,7 @@ Order.destroy_all
 @admin = User.create(name: 'Kevin', address: '123 Street Road', city: 'City Name', state: 'CO', zip: 12345, email: 'admin@gmail.com', password: 'admin', role: 2)
 
 # orders
-@order_1 = Order.create!(name: 'Meg', address: '123 Stang Ave', city: 'Hershey', state: 'PA', zip: 17033, user: @user)
+@order_1 = Order.create!(name: 'Meg', address: '123 Stang Ave', city: 'Hershey', state: 'PA', zip: 17033, user: @user, status: 'shipped')
 
 # add items to order
 @order_1.item_orders.create!(item: @tire, price: @tire.price, quantity: 2)

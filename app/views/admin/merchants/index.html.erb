@@ -1,5 +1,11 @@
 <% @merchants.each do |merchant| %>
 	<section id='merchant-<%= merchant.id %>'>
 		<h3><%= link_to "#{merchant.name}", "/admin/merchants/#{merchant.id}" %></h3>
+		<p><%= merchant.city %>, <%= merchant.state %></p>
+		<% if merchant.enabled? %>
+			<%= button_to "disable", "/admin/merchants/#{merchant.id}", method: :patch %>
+		<% else %>
+			<%= button_to "enable", "/admin/merchants/#{merchant.id}",method: :patch %>
+		<% end %>
 	</section>
 <% end %>

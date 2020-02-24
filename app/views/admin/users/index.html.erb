@@ -1,0 +1,66 @@
+<h1> All Users in System </h1>
+
+<section id="admins">
+
+	<table>
+		<tr>
+		<th> admins </th>
+		</tr>
+		<tr>
+		<th> user name </th>
+		<th> created on </th>
+		</tr>
+		<%  admins.each do |admin| %>
+			<tr>
+			<th><%= link_to admin.name, admin_path(admin.id)  %></th>
+			<th><%= admin.created_at.to_date %></th>
+			</tr>
+		<% end %>
+	</table>
+</section>
+
+<br>
+<br>
+<br>
+
+<section id="merchants">
+
+	<table>
+		<tr>
+		<th> merchant employees </th>
+		</tr>
+		<tr>
+		<th> user name </th>
+		<th> created on </th>
+		</tr>
+		<%  merchants.each do |merchant| %>
+			<tr>
+			<th><%= link_to merchant.name, admin_path(merchant.id) %></th>
+			<th><%= merchant.created_at.to_date %></th>
+			</tr>
+		<% end %>
+	</table>
+</section>
+
+<br>		
+<br>
+<br>
+
+<section id="users">
+
+	<table>
+		<tr>
+		<th> default users </th>
+		</tr>
+		<tr>
+		<th> user name </th>
+		<th> created on </th>
+		</tr>
+		<%  defaults.each do |default| %>
+			<tr>
+			<th><%= link_to default.name, admin_path(default.id)  %></th>
+			<th><%= default.created_at.to_date %></th>
+			</tr>
+		<% end %>
+	</table>
+</section>

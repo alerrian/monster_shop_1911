@@ -14,7 +14,7 @@ RSpec.describe 'As an Admin' do
 			expect(current_path).to eq("/admin/merchants")
 	 	end
 
-		it 'I see a list of all the Merchants on the website and there names are a hyperlink to their dashborads.' do
+		it 'I see a list of all the Merchants on the website and their names are a hyperlink to their dashborads.' do
 
 			expect(current_path).to eq("/admin/merchants")
 
@@ -29,5 +29,27 @@ RSpec.describe 'As an Admin' do
 				expect(current_path).to eq("/admin/merchants/#{@megs_shop.id}")
 			end
 		end
+
+		it 'merchant city and state' do
+			within "#merchant-#{@megs_shop.id}" do
+				expect(page).to have_content('Hershey')
+				expect(page).to have_content('PA')
+                        end	
+			within "#merchant-#{@brians_shop.id}" do
+				expect(page).to have_content('Denver')
+				expect(page).to have_content('CO')
+			end
+		end
+
+		it 'can disable/enable merchants' do
+			within "#merchant-#{@megs_shop.id}" do
+                                expect(page).to have_button('disable')
+				click_button 'disable'
+                                expect(page).to_not have_button('disable')
+                                expect(page).to have_button('enable')
+				click_button 'enable'
+                                expect(page).to_not have_button('enable')	
+                        end     
+		end
 	end
-end
+end	
