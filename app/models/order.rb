@@ -22,10 +22,10 @@ class Order < ApplicationRecord
   def cancel
     update(status: 'cancelled')
 
-    item_orders.each do |order|
-      order.update(status: 'unfulfilled')
-      order.item.update(inventory: (order.item.inventory + order.quantity))
-    end
+    # item_orders.each do |order|
+    #   order.update(status: 'unfulfilled')
+    #   order.item.update(inventory: (order.item.inventory + order.quantity))
+    # end
   end
 
   def self.sort_status

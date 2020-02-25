@@ -113,7 +113,7 @@ describe 'As a Merchant' do
       expect(current_path).to eq("/merchant_employee/dashboard")
     end
 
-		it 'If I click on the log in button when I am already logged in then I recive a flash message and am sent back to the profile page' do
+		it 'If I click on the log in button when I am already logged in then I recive a flash message and am sent back to the dahsboard page' do
 
   		visit '/welcome'
 
@@ -196,7 +196,7 @@ describe 'As a Admin' do
       expect(current_path).to eq("/admin/dashboard")
     end
 
-    it 'If I click on the log in button when I am already logged in then I recive a flash message and am sent back to the profile page' do
+    it 'If I click on the log in button when I am already logged in then I recive a flash message and am sent back to the dashboard page' do
       visit '/welcome'
 
       expect(current_path).to eq('/welcome')

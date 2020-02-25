@@ -1,12 +1,8 @@
 class MerchantEmployee::ItemsController < MerchantEmployee::BaseController
 
 	def index
-		if params[:id]
-			@merchant = Merchant.find(params[:id])
-			@items = @merchant.items
-		else
-			@items = Item.all
-		end
+		@merchant = Merchant.find(params[:id])
+		@items = @merchant.items
 	end
 
 	def show
