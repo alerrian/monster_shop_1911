@@ -44,7 +44,7 @@ RSpec.describe 'As a merchant employee' do
     it 'can click a link to see a discounts index page' do
       within '#discounts' do
         click_on 'My Discounts'
-        expect(current_path).to eq("/merchants/#{@new_merchant.id}/discounts")
+        expect(current_path).to eq("/merchant_employee/merchants/#{@new_merchant.id}/discounts")
       end
     end
   end
