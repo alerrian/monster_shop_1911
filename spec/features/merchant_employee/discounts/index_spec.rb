@@ -48,4 +48,24 @@ RSpec.describe 'As a merchant employee' do
       end
     end
   end
+
+  describe 'When I visit the discounts index page' do
+    it 'can see an index of all discounts' do
+      within '#discounts' do
+        click_on 'My Discounts'
+      end
+
+      within "#discount-#{@discount_1.id}" do
+        expect(page).to have_content(@discount_1.name)
+        expect(page).to have_content("Items Required: #{@discount_1.item_threshold}")
+        expect(page).to have_content("Percentage Off: #{@discount_1.percentage_off}") 
+      end
+
+      within "#discount-#{@discount_2.id}" do
+        expect(page).to have_content(@discount_2.name)
+        expect(page).to have_content("Items Required: #{@discount_2.item_threshold}")
+        expect(page).to have_content("Percentage Off: #{@discount_2.percentage_off}") 
+      end
+    end
+  end
 end
