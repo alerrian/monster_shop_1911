@@ -11,7 +11,8 @@ RSpec.describe Merchant, type: :model do
 
   describe "Relationships" do
     it {should have_many :items}
-		it {should have_many :users}
+    it {should have_many :users}
+    it { should have_many :discounts }
   end
 
   describe 'Instance methods' do
