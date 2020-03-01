@@ -3,5 +3,5 @@ class Discount < ApplicationRecord
 
   validates_presence_of :name,
                         :item_threshold,
-                        :precentage_off
+                        :percentage_off
 end
