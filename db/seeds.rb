@@ -33,3 +33,8 @@ Order.destroy_all
 @order_1.item_orders.create!(item: @paw_pads, price: @paw_pads.price, quantity: 8)
 @order_1.item_orders.create!(item: @rope, price: @rope.price, quantity: 5)
 @order_1.item_orders.create!(item: @ball, price: @ball.price, quantity: 10)
+
+# discounts
+@megs_shop.discounts.create!(name: 'Small Discount', item_threshold: 20, percentage_off: 5)
+@megs_shop.discounts.create!(name: 'Big Discount', item_threshold: 40, percentage_off: 10)
+@brians_shop.discounts.create!(name: 'Big Discount', item_threshold: 40, percentage_off: 10)
