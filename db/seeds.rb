@@ -1,4 +1,5 @@
 Merchant.destroy_all
+Discount.destroy_all
 Item.destroy_all
 User.destroy_all
 Order.destroy_all
