@@ -6,6 +6,9 @@
 	<%= @merchant.zip %></p>
 </section>
 
+<section id='discounts'>
+	<%= link_to 'My Discounts', "/merchant_employee/merchants/#{@merchant.id}/discounts"%>
+</section>
 <%= link_to "Inventory", "/merchant_employee/merchants/#{@merchant.id}/items" %>
 
 <h4> Unfulfilled Orders </h4>
